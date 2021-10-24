@@ -1,6 +1,6 @@
 run_analysis.R produces two tidy data files (one raw and one aggregated with means) from Samsung Galaxy S II smartphone data collected and provided by the Center for Machine Learning and Intelligence Systems UCI.
 
-See: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+See: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones, which includes the raw data
 
 The run_analysis.R script:
 1) Downloads and unzips the Human Activity Recognication Using Smartphones Data Set
