@@ -19,7 +19,7 @@ unzip(zipfile = "UCI HAR Dataset.zip")
 # README.txt in the UCI HAR Dataset specifies:
 
 # 'features.txt': List of all features.
-features <- read.table("UCI HAR Dataset/features.txt")
+features <- read.table("UCI HAR Dataset/features.txt", stringsAsFactors = TRUE)
 
 # 'activity_labels.txt': Links the class labels with their activity name.
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", 
@@ -30,7 +30,8 @@ subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt",
                             col.names = "SubjectID")
 
 # 'train/X_train.txt': Training set.
-x_train <- read.table("UCI HAR Dataset/train/X_train.txt", col.names = features[,2])
+x_train <- read.table("UCI HAR Dataset/train/X_train.txt")
+colnames(x_train) <- features[,2]
 
 # 'train/y_train.txt': Training labels.
 y_train <- read.table("UCI HAR Dataset/train/y_train.txt", col.names = "ActivityID")
@@ -43,7 +44,8 @@ subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt",
                             col.names = "SubjectID")
 
 # 'test/X_test.txt': Test set.
-x_test <- read.table("UCI HAR Dataset/test/X_test.txt", col.names = features[,2])
+x_test <- read.table("UCI HAR Dataset/test/X_test.txt")
+colnames(x_test) <- features[,2]
 
 # 'test/y_test.txt': Test labels.
 y_test <- read.table("UCI HAR Dataset/test/y_test.txt", col.names = "ActivityID")
